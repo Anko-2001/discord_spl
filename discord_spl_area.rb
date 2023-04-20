@@ -37,7 +37,6 @@ def before_area_alarm(*start_times, bot)
     start_times = area_time_arr(area_hash_fetch)
   end
   start_times.each do |start_time|
-    puts "#{start_time.to_i} #{now.hour} #{now.min}"
     if (start_time.to_i - 1) == now.hour && 50 == now.min
       channel = bot.channel(REPORT_CHANNEL_ID)
       channel.send_message("#{start_time}時からエリア始まるよ")
