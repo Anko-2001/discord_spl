@@ -2,4 +2,4 @@
 require_relative '../config/environment.rb'
 
 # Load and execute app.rb
-require_relative '../app.rb'
+require_relative '../discord_spl_area.rb'
