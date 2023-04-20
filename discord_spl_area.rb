@@ -4,6 +4,7 @@ require 'json'
 require 'open-uri'
 
 TOKEN = ENV['discord-TOKEN']
+ENV["TZ"] = "Asia/Tokyo"
 
 REPORT_CHANNEL_ID = '1095004266319593472'
 bot = Discordrb::Commands::CommandBot.new(token: TOKEN, prefix: '/')
@@ -31,7 +32,7 @@ def area_time_arr(x_hash)
 end
 
 def before_area_alarm(*start_times, bot)
-  now = Time.now
+  now = Time.now.localtime
   if start_times.length == 1
     start_times = area_time_arr(area_hash_fetch)
   end
@@ -65,7 +66,7 @@ end
 bot.run(:async)
 
 while true
-  now = Time.now
+  now = Time.now.localtime
   if now.hour == 10 && now.min == 30
     channel = bot.channel(REPORT_CHANNEL_ID)
     area_hash = area_hash_fetch
