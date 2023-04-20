@@ -1,0 +1,5 @@
+# Load the environment
+require_relative '../config/environment'
+
+# Load and execute app.rb
+require_relative '../app'
