@@ -3,7 +3,7 @@ require 'date'
 require 'json'
 require 'open-uri'
 
-TOKEN = ENV[discord-TOKEN]
+TOKEN = ENV['discord-TOKEN']
 
 REPORT_CHANNEL_ID = '1095004266319593472'
 bot = Discordrb::Commands::CommandBot.new(token: TOKEN, prefix: '/')
